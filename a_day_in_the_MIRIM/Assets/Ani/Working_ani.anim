@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Walking_ani
+  m_Name: Working_ani
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -21,21 +21,21 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 21300002, guid: 82bba668c09d93843b50392c97428b6c, type: 3}
-    - time: 0.13333334
+    - time: 0.125
       value: {fileID: 21300000, guid: 82bba668c09d93843b50392c97428b6c, type: 3}
-    - time: 0.3
+    - time: 0.225
       value: {fileID: 21300002, guid: 82bba668c09d93843b50392c97428b6c, type: 3}
-    - time: 0.41666666
+    - time: 0.325
       value: {fileID: 21300002, guid: 82bba668c09d93843b50392c97428b6c, type: 3}
-    - time: 0.56666666
+    - time: 0.425
       value: {fileID: 21300004, guid: 82bba668c09d93843b50392c97428b6c, type: 3}
-    - time: 0.71666664
+    - time: 0.575
       value: {fileID: 21300002, guid: 82bba668c09d93843b50392c97428b6c, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 60
+  m_SampleRate: 40
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -61,7 +61,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.7333333
+    m_StopTime: 0.59999996
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
