@@ -1,2 +1,1 @@
-# a-day-in-the-mirim
- 
+# 미림의 하루.
