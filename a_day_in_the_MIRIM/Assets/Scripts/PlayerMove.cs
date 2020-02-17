@@ -20,6 +20,9 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
+        ScreenChk();
+        //이동 제한 함수
+
         //점프
         if (Input.GetButtonDown("Jump") && !anim.GetBool("Jumping"))
         {
@@ -82,5 +85,13 @@ public class PlayerMove : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void ScreenChk()
+    {
+        Vector3 worlpos = Camera.main.WorldToViewportPoint(transform.position);
+        if (worlpos.x < 0.02f) worlpos.x = 0.02f;
+        if (worlpos.x > 0.98f) worlpos.x = 0.98f;
+        this.transform.position = Camera.main.ViewportToWorldPoint(worlpos);
     }
 }
