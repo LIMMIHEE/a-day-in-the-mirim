@@ -45,7 +45,7 @@ public class PlayerMove : MonoBehaviour
 
 
         //캐릭터 애니메이션 걷느냐에 따라 바꾸기
-        if (Mathf.Abs( rigid.velocity.x) < 0.4)
+        if (Mathf.Abs( rigid.velocity.x) < 0.2)
         {
             anim.SetBool("Walking", false);
         }

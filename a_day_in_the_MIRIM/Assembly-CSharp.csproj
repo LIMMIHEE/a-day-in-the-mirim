@@ -63,10 +63,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Bookstate.cs" />
     <Compile Include="Assets\GameManager.cs" />
     <Compile Include="Assets\Scenes\Roulette.cs" />
     <Compile Include="Assets\Scripts\Book.cs" />
+    <Compile Include="Assets\Scripts\Bookstate.cs" />
     <Compile Include="Assets\Scripts\PlayerMove.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />

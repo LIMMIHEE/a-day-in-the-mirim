@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 
@@ -9,6 +10,11 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     GameObject Book;
     private static GameManager _instence;
+    public float LimiTime;
+    public TextMeshProUGUI Timetext;
+    public GameObject panel;
+    private bool objControl=true;
+
     public static GameManager instence
     {
         get
@@ -37,15 +43,25 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(LimiTime > 0) {
+            LimiTime -= Time.deltaTime;
+            Timetext.text = "Time : " + (int)LimiTime;
+            panel.SetActive(false);
+        }
+        else
+        {
+            StopCoroutine(CrateBookRotation());
+            panel.SetActive(true);
+            objControl = false;
+        }
     }
 
     IEnumerator CrateBookRotation()
     {
-        while (true)
+        while (objControl)
         {
             CreateBook();
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.5f);
         }
             
     }
@@ -62,4 +78,10 @@ public class GameManager : MonoBehaviour
         pos.z = 0.0f;
         Instantiate(Book, pos, Quaternion.identity);    // Quaternion.identity = 회전 하지 않음/
     }
+    public void NextScence()
+    {
+        SceneManager.LoadScene("TestScene");
+    }
+
+    
 }
