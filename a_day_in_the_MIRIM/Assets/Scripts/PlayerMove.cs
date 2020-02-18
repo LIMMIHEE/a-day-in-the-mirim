@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    public GameDialog dialog;
     public float maxSpeed;
     public float JumpPower;
     Rigidbody2D rigid;
     SpriteRenderer spriteRenderer;
     Animator anim;
-
+    GameObject scanObject;
 
     void Awake()
     {
@@ -30,6 +31,12 @@ public class PlayerMove : MonoBehaviour
             anim.SetBool("Jumping", true);
         }
 
+        // 대화창
+        if (Input.GetButtonDown("Submit") && scanObject != null)
+        {
+            // dialog.Action(scanObject);
+            Debug.Log("This is " + scanObject.name);
+        }
 
         //  멈추게할때 스피드 낮추는 거
         if (Input.GetButtonUp("Horizontal"))
@@ -84,6 +91,19 @@ public class PlayerMove : MonoBehaviour
                     anim.SetBool("Jumping", false);
                 }
             }
+        }
+
+        //Debug.DrawRay(rigid.position, Vector3.left * 0.7f, new Color(0,1,0));
+        Debug.DrawRay(rigid.position, Vector3.right, new Color(0, 1, 0));
+        RaycastHit2D rayHit2 = Physics2D.Raycast(rigid.position, Vector3.right, 1, LayerMask.GetMask("Object"));
+
+        if (rayHit2.collider != null) {
+            scanObject = rayHit2.collider.gameObject;
+            Debug.Log("if : " + scanObject);
+        }
+        else {
+            scanObject = null;
+            //Debug.Log("else" + scanObject);
         }
     }
 
