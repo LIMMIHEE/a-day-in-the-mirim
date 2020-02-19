@@ -12,6 +12,7 @@ public class PlayerMove : MonoBehaviour
     Animator anim;
     GameObject scanObject;
 
+
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
@@ -34,8 +35,8 @@ public class PlayerMove : MonoBehaviour
         // 대화창
         if (Input.GetButtonDown("Submit") && scanObject != null)
         {
-            // dialog.Action(scanObject);
-            Debug.Log("This is " + scanObject.name);
+             dialog.Action(scanObject);
+            //Debug.Log("This is " + scanObject.name);
         }
 
         //  멈추게할때 스피드 낮추는 거
@@ -60,6 +61,8 @@ public class PlayerMove : MonoBehaviour
         {
             anim.SetBool("Walking", true);
         }
+
+        
     }
 
     void FixedUpdate()
@@ -99,7 +102,7 @@ public class PlayerMove : MonoBehaviour
 
         if (rayHit2.collider != null) {
             scanObject = rayHit2.collider.gameObject;
-            Debug.Log("if : " + scanObject);
+            Debug.Log("if : " + scanObject.name);
         }
         else {
             scanObject = null;

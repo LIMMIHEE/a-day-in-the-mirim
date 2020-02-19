@@ -8,9 +8,24 @@ public class GameDialog : MonoBehaviour
     public GameObject talkPanel;
     public Text talkText;
     public GameObject scanObject;
-    public bool isAction;
+    public bool isAction=false;
 
-    public void Action(GameObject scanObject)
+    /*
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Object"))
+        {
+            Debug.Log("a");
+        }
+    }
+    */
+    ///*
+    ///
+    void Update()
+    {
+        
+    }
+    public void Action(GameObject scanObj)
     {
         //if (isAction)   //Exit Action
         //{
@@ -19,9 +34,10 @@ public class GameDialog : MonoBehaviour
         //else   //Enter Action
         //{
         isAction = true;
-        this.scanObject = scanObject;
+        scanObject = scanObj;
         talkText.text = "이건 " + scanObject.name + "이다.";
         //}
         talkPanel.SetActive(isAction);
     }
+    //*/
 }

@@ -179,8 +179,8 @@ Canvas:
   m_GameObject: {fileID: 211383006}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 795361152}
   m_PlaneDistance: 100
   m_PixelPerfect: 1
   m_ReceivesEvents: 1
@@ -189,7 +189,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!224 &211383010
 RectTransform:
@@ -363,7 +363,7 @@ GameObject:
   - component: {fileID: 547914843}
   m_Layer: 10
   m_Name: Door_0
-  m_TagString: Untagged
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -860,8 +860,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   talkPanel: {fileID: 0}
-  talkText: {fileID: 0}
-  scanObject: {fileID: 0}
+  talkText: {fileID: 577958228}
+  scanObject: {fileID: 1056010127}
   isAction: 0
 --- !u!1 &2046553545
 GameObject:

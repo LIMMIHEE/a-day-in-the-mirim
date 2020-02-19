@@ -29,9 +29,6 @@ public class GameManager : MonoBehaviour
     }
 
     public int score;
-    [SerializeField]
-    private TextMeshProUGUI ScoreText;
-    
 
     // Start is called before the first frame update
     void Start()
@@ -67,8 +64,12 @@ public class GameManager : MonoBehaviour
     }
 
 
+    [SerializeField]
+    private TextMeshProUGUI ScoreText;
+
     public void Score()
     {
+
         score++;
         ScoreText.text = "Score : " + score;
     }

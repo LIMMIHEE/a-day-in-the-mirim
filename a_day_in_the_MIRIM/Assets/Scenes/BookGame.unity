@@ -2220,7 +2220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Book: {fileID: 1991885663810113734, guid: 2f2fe2721b2276f4099f78dd4fdaef36, type: 3}
-  LimiTime: 2
+  LimiTime: 30
   Timetext: {fileID: 993793075}
   panel: {fileID: 663284393}
   score: 0
