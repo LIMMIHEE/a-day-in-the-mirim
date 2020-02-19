@@ -95,19 +95,6 @@ public class PlayerMove : MonoBehaviour
                 }
             }
         }
-
-        //Debug.DrawRay(rigid.position, Vector3.left * 0.7f, new Color(0,1,0));
-        Debug.DrawRay(rigid.position, Vector3.right, new Color(0, 1, 0));
-        RaycastHit2D rayHit2 = Physics2D.Raycast(rigid.position, Vector3.right, 1, LayerMask.GetMask("Object"));
-
-        if (rayHit2.collider != null) {
-            scanObject = rayHit2.collider.gameObject;
-            Debug.Log("if : " + scanObject.name);
-        }
-        else {
-            scanObject = null;
-            //Debug.Log("else" + scanObject);
-        }
     }
 
     private void ScreenChk()
@@ -115,6 +102,22 @@ public class PlayerMove : MonoBehaviour
         Vector3 worlpos = Camera.main.WorldToViewportPoint(transform.position);
         if (worlpos.x < 0.02f) worlpos.x = 0.02f;
         if (worlpos.x > 0.98f) worlpos.x = 0.98f;
+        if (dialog.isAction) rigid.velocity = new Vector2(0, 0);    // 대화창 뜨면 움직임 멈추게 할려고 쓴건데 조금씩 움직임
         this.transform.position = Camera.main.ViewportToWorldPoint(worlpos);
+    }
+
+    // 물체 인식
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Object")
+        {
+            Debug.Log("if : " + scanObject);
+            scanObject = collision.gameObject;
+        }
+        else
+        {
+            Debug.Log("else : " + scanObject);
+            scanObject = null;
+        }
     }
 }

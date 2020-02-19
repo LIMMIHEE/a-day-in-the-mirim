@@ -25,19 +25,19 @@ public class GameDialog : MonoBehaviour
     {
         
     }
-    public void Action(GameObject scanObj)
+
+    public void Action(GameObject scanObject)
     {
-        //if (isAction)   //Exit Action
-        //{
-        //    isAction = false;
-        //}
-        //else   //Enter Action
-        //{
-        isAction = true;
-        scanObject = scanObj;
-        talkText.text = "이건 " + scanObject.name + "이다.";
-        //}
+        if (isAction && scanObject != null)   //Exit Action
+        {
+            isAction = false;
+        }
+        else   //Enter Action
+        {
+            isAction = true;
+            this.scanObject = scanObject;
+            talkText.text = "이건 " + scanObject.name + "이다.";
+        }
         talkPanel.SetActive(isAction);
     }
-    //*/
 }
