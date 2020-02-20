@@ -7,8 +7,8 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField]
-    GameObject Book;
+
+    public GameObject[] Objectrand = new GameObject[5];
     private static GameManager _instence;
     public float LimiTime;
     public TextMeshProUGUI Timetext;
@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         CreateBook();
         StartCoroutine(CrateBookRotation());
     }
@@ -75,14 +76,19 @@ public class GameManager : MonoBehaviour
     }
     private void CreateBook()
     {
+        int num_name = Random.Range(0, 5);
+        GameObject a1 = Objectrand[num_name];
         Vector3 pos = Camera.main.ViewportToWorldPoint(new Vector3(UnityEngine.Random.Range(0.0f,1.0f),1.1f,0));
         pos.z = 0.0f;
-        Instantiate(Book, pos, Quaternion.identity);    // Quaternion.identity = 회전 하지 않음/
+      
+        Instantiate(a1, pos, Quaternion.identity);    // Quaternion.identity = 회전 하지 않음/
+        
     }
     public void NextScence()
     {
         SceneManager.LoadScene("TestScene");
     }
+
 
     
 }

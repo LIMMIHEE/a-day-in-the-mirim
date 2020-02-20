@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class GameDialog : MonoBehaviour
 {
+    private PlayerMove Pm;
     public GameObject talkPanel;
     public Text talkText;
     public GameObject scanObject;
@@ -37,7 +38,9 @@ public class GameDialog : MonoBehaviour
             isAction = true;
             this.scanObject = scanObject;
             talkText.text = "이건 " + scanObject.name + "이다.";
+           
         }
         talkPanel.SetActive(isAction);
+
     }
 }

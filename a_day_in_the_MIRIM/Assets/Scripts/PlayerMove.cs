@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -102,7 +103,19 @@ public class PlayerMove : MonoBehaviour
         Vector3 worlpos = Camera.main.WorldToViewportPoint(transform.position);
         if (worlpos.x < 0.02f) worlpos.x = 0.02f;
         if (worlpos.x > 0.98f) worlpos.x = 0.98f;
-        if (dialog.isAction) rigid.velocity = new Vector2(0, 0);    // 대화창 뜨면 움직임 멈추게 할려고 쓴건데 조금씩 움직임
+        if(SceneManager.GetActiveScene().name == "TestScene") { 
+            if (dialog.isAction)
+            {
+                rigid.velocity = new Vector3(0, 0);
+                maxSpeed = 0;
+                JumpPower = 0;
+            }// 대화창 뜨면 움직임 멈추게 할려고 쓴건데 조금씩 움직임
+            if (!dialog.isAction)
+            {
+                maxSpeed = 5;
+                JumpPower = 10;
+            }
+        }
         this.transform.position = Camera.main.ViewportToWorldPoint(worlpos);
     }
 
