@@ -96,6 +96,26 @@ public class PlayerMove : MonoBehaviour
                 }
             }
         }
+
+        // 물체 인식
+        Debug.DrawRay(rigid.position, Vector3.left, new Color(0, 1, 0));
+        Debug.DrawRay(rigid.position, Vector3.right, new Color(0, 1, 0));
+        RaycastHit2D rayHit2 = Physics2D.Raycast(rigid.position, Vector3.left, 1, LayerMask.GetMask("Object"));
+        RaycastHit2D rayHit3 = Physics2D.Raycast(rigid.position, Vector3.right, 1, LayerMask.GetMask("Object"));
+        if (rayHit2.collider != null)
+        {
+            // Debug.Log("if : " + scanObject);
+            scanObject = rayHit2.collider.gameObject;
+        }
+        else if (rayHit3.collider != null)
+        {
+            scanObject = rayHit3.collider.gameObject;
+        }
+        else 
+        {
+            // Debug.Log("else : " + scanObject);
+            scanObject = null;
+        }
     }
 
     private void ScreenChk()
@@ -120,17 +140,18 @@ public class PlayerMove : MonoBehaviour
     }
 
     // 물체 인식
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Object")
-        {
-            Debug.Log("if : " + scanObject);
-            scanObject = collision.gameObject;
-        }
-        else
-        {
-            Debug.Log("else : " + scanObject);
-            scanObject = null;
-        }
-    }
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    scanObject = null;
+    //    if (collision.gameObject.tag == "Object")
+    //    {
+    //        Debug.Log("if : " + scanObject);
+    //        scanObject = collision.gameObject;
+    //    }
+    //    else if (collision.gameObject.tag == "MainCamera")
+    //    {
+    //        Debug.Log("else : " + scanObject);
+    //        scanObject = null;
+    //    }
+    //}
 }
