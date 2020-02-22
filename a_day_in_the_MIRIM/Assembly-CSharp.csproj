@@ -66,10 +66,13 @@
     <Compile Include="Assets\GameManager.cs" />
     <Compile Include="Assets\Scripts\Book.cs" />
     <Compile Include="Assets\Scripts\Bookstate.cs" />
+    <Compile Include="Assets\Scripts\DrogNshoot.cs" />
     <Compile Include="Assets\Scripts\GameDialog.cs" />
     <Compile Include="Assets\Scripts\PlayerMove.cs" />
     <Compile Include="Assets\Scripts\Roulette.cs" />
     <Compile Include="Assets\Scripts\roulette_chk.cs" />
+    <Compile Include="Assets\Scripts\swipscript_.cs" />
+    <Compile Include="Assets\Scripts\trajectoryLine.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
