@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 using TMPro;
 
 public class Roulette : MonoBehaviour
@@ -9,15 +12,21 @@ public class Roulette : MonoBehaviour
     private float timeInterval;
     private bool isCoroutine;
     private int finalAngle;
-    public TextMeshProUGUI Ptext;
+    public Text Ptext;
     public int section;
     private float totalAngle;
     public string[] PrizeName;
+
+    public GameObject panel;
+    private float DestotyTime=2;
+    private float TickTime=0;
+    private bool timechk_b=false;
     //float roultteSpeed = 0;
 
     // Start is called before the first frame update
     void Start()
     {
+        panel.SetActive(false);
         isCoroutine = true;
         totalAngle = 360 / section;
     }
@@ -40,7 +49,14 @@ public class Roulette : MonoBehaviour
         {
             StartCoroutine(Spin());
         }
-
+        if(timechk_b == true)
+        {
+            TickTime += Time.deltaTime;
+            if (TickTime> DestotyTime)
+            {
+                panel.SetActive(true);
+            }
+        }
 
     }
 
@@ -74,13 +90,33 @@ public class Roulette : MonoBehaviour
         finalAngle = Mathf.RoundToInt(transform.eulerAngles.z);
         print(finalAngle);
 
+        
+
         for(int i=0; i<section; i++)
         {
-            if(finalAngle == i * totalAngle)
+            if (finalAngle == i * totalAngle)
             {
-                Ptext.text = PrizeName[i];
+                
+                switch (int.Parse(PrizeName[i]))
+                {
+                    case 1: Ptext.text = "야호! 빠르게 도착했다."; break;
+                    case -1: Ptext.text = "이런.. 무단지각이다."; break;
+                    case 2: Ptext.text = "평범하게 도착했다."; break;
+                    case 3: Ptext.text = "질병 지각으로 도착했다."; break;
+                    default: Ptext.text = "다시 돌려보자!"; isCoroutine = true; break;
+                }
             }
         }
-        isCoroutine = true;
+
+        timechk_b = true;
+
+          
+        
     }
+
+    public void NextScence()
+    {
+        SceneManager.LoadScene("TestScene");
+    }
+    
 }
