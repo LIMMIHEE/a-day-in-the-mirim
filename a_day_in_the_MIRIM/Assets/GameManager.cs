@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,7 +10,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] Objectrand = new GameObject[5];
     private static GameManager _instence;
     public float LimiTime;
-    public TextMeshProUGUI Timetext;
+    public Text Timetext;
     public GameObject panel;
     private bool objControl=true;
 
@@ -66,7 +65,7 @@ public class GameManager : MonoBehaviour
 
 
     [SerializeField]
-    private TextMeshProUGUI ScoreText;
+    private Text ScoreText;
 
     public void Score()
     {
