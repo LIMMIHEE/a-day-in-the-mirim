@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(LineRenderer))]
 public class trajectoryLine : MonoBehaviour
@@ -31,5 +32,10 @@ public class trajectoryLine : MonoBehaviour
     public void EndLine()
     {
         Lr.positionCount = 0;
+    }
+
+    public void NextScence()
+    {
+        SceneManager.LoadScene("TestScene");
     }
 }

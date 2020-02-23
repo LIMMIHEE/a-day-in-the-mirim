@@ -102,7 +102,7 @@ public class Roulette : MonoBehaviour
                     case 1: Ptext.text = "야호! 빠르게 도착했다."; break;
                     case -1: Ptext.text = "이런.. 무단지각이다."; break;
                     case 2: Ptext.text = "평범하게 도착했다."; break;
-                    case 3: Ptext.text = "질병 지각으로 도착했다."; break;
+                    case 3: Ptext.text = "이런, 복장불량이다."; break;
                     default: Ptext.text = "다시 돌려보자!"; isCoroutine = true; break;
                 }
             }
