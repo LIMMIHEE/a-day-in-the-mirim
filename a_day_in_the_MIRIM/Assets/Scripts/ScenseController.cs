@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ScenseController : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class ScenseController : MonoBehaviour
 
     [SerializeField] private MainCard originCard;
     [SerializeField] private Sprite[] image;
+    //[SerializeField] private GameObject targetObject;
+    //[SerializeField] private string targetMessage;
 
     private void Start()
     {
@@ -85,7 +88,7 @@ public class ScenseController : MonoBehaviour
 
     private IEnumerator CheckMatch()
     {
-        if(_firstRevealed.id == _secondRevealed.id)
+        if (_firstRevealed.id == _secondRevealed.id)
         {
             _score++;
             socreLable.text = "Score : " + _score;
@@ -99,6 +102,18 @@ public class ScenseController : MonoBehaviour
         }
 
         _firstRevealed = null;
-        _secondRevealed = null; 
+        _secondRevealed = null;
+
+        if (_score == 4)
+        {
+            Restart();
+        }
+
+    }
+
+    public void Restart()
+    {
+        Debug.Log("다시시작");
+        SceneManager.LoadScene("CardGame");
     }
 }
