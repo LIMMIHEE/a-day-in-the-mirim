@@ -21,6 +21,9 @@ public class Roulette : MonoBehaviour
     private float DestotyTime=2;
     private float TickTime=0;
     private bool timechk_b=false;
+
+    public AudioSource MusicSource;
+    public AudioClip Music;
     //float roultteSpeed = 0;
 
     // Start is called before the first frame update
@@ -48,6 +51,7 @@ public class Roulette : MonoBehaviour
         if(Input.GetMouseButtonDown(0)&& isCoroutine)
         {
             StartCoroutine(Spin());
+            MusicSource.PlayOneShot(Music);
         }
         if(timechk_b == true)
         {
@@ -62,6 +66,7 @@ public class Roulette : MonoBehaviour
 
    private IEnumerator Spin()
     {
+        
         isCoroutine = false;
         randVal = Random.Range(200, 300);
 

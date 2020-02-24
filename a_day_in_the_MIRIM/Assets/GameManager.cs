@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
     public GameObject panel;
     private bool objControl=true;
 
+    public AudioClip Music;
+    public AudioSource MusicSource;
+
     public static GameManager instence
     {
         get
@@ -69,7 +72,7 @@ public class GameManager : MonoBehaviour
 
     public void Score()
     {
-
+        MusicSource.PlayOneShot(Music);
         score++;
         ScoreText.text = "Score : " + score;
     }

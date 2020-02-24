@@ -8,7 +8,9 @@ public class trajectoryLine : MonoBehaviour
 {
     public LineRenderer Lr;
 
-
+   
+    public AudioSource MusicSource;
+    public AudioClip MusicClip;
 
     private void Awake()
     {
@@ -31,11 +33,15 @@ public class trajectoryLine : MonoBehaviour
 
     public void EndLine()
     {
+        //PlayM.PlayMusic();
         Lr.positionCount = 0;
+        MusicSource.PlayOneShot(MusicClip);
     }
 
     public void NextScence()
     {
         SceneManager.LoadScene("TestScene");
     }
+
+
 }
