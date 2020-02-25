@@ -12,8 +12,6 @@ public class ScenseController : MonoBehaviour
 
     [SerializeField] private MainCard originCard;
     [SerializeField] private Sprite[] image;
-    //[SerializeField] private GameObject targetObject;
-    //[SerializeField] private string targetMessage;
 
     private void Start()
     {
@@ -106,14 +104,13 @@ public class ScenseController : MonoBehaviour
 
         if (_score == 4)
         {
-            Restart();
+            Invoke("Restart", 2);
         }
-
     }
 
     public void Restart()
     {
-        Debug.Log("다시시작");
+        Debug.Log("다시시작2");
         SceneManager.LoadScene("CardGame");
     }
 }
