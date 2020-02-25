@@ -1,16 +1,34 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameControl : MonoBehaviour
 {
     [SerializeField]
-    private Transform[] pictures;
+    public Transform[] pictures;
+
+    [SerializeField]
+    public Sprite[] pictures_two;
+    public Sprite[] pictures_three;
+    public Sprite[] pictures_Origi;
+    [SerializeField]
+    public SpriteRenderer[] Sp_change;
+   
+
+    private int Puz_num = 0;
+    public float LimiTime;
+    public Text Timetext;
+    public Text Scoretext;
+
+    int num_6 = 0;
+    int num_7 = 0;
 
     [SerializeField]
     public GameObject panel;
 
     public static bool Finish;
+    int Score;
 
     private void Start()
     {
@@ -29,6 +47,49 @@ public class GameControl : MonoBehaviour
            pictures[6].rotation.z == 0 &&
            pictures[7].rotation.z == 0 &&
            pictures[8].rotation.z == 0)
+        {
+            for(int j=0; j<9; j++)
+            {
+                int n = Random.Range(1, 10)*90;
+                pictures[j].rotation =  Quaternion.Euler(0,0,n);
+            }
+            Score++;
+            Scoretext.text = "SCORE : " + Score;
+            if (Puz_num==0)
+            {
+                Puz_num++;
+                for(int i=0; i<9; i++)
+                {
+                    Sp_change[i].sprite = pictures_two[i];
+                }
+            }
+           else  if (Puz_num == 1)
+            {
+                Puz_num++;
+                for (int i = 0; i < 9; i++)
+                {
+                    Sp_change[i].sprite = pictures_three[i];
+                }
+            }
+            else
+            {
+                Puz_num = 0;
+                for (int i = 0; i < 9; i++)
+                {
+                    Sp_change[i].sprite = pictures_Origi[i];
+                }
+            }
+            
+        }
+       
+
+        if (LimiTime > 0)
+        {
+            LimiTime -= Time.deltaTime;
+            Timetext.text = "Time : " + (int)LimiTime;
+            panel.SetActive(false);
+        }
+        else
         {
             Finish = true;
             panel.SetActive(true);
