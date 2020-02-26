@@ -21,8 +21,6 @@ public class GameControl : MonoBehaviour
     public Text Timetext;
     public Text Scoretext;
 
-    int num_6 = 0;
-    int num_7 = 0;
 
     [SerializeField]
     public GameObject panel;
@@ -38,7 +36,7 @@ public class GameControl : MonoBehaviour
 
     private void Update()
     {
-        if (pictures[0].rotation.z == 0 &&
+        if (pictures[0].rotation.z  == 0 &&
            pictures[1].rotation.z == 0 &&
            pictures[2].rotation.z == 0 &&
            pictures[3].rotation.z == 0 &&
@@ -48,38 +46,8 @@ public class GameControl : MonoBehaviour
            pictures[7].rotation.z == 0 &&
            pictures[8].rotation.z == 0)
         {
-            for(int j=0; j<9; j++)
-            {
-                int n = Random.Range(1, 10)*90;
-                pictures[j].rotation =  Quaternion.Euler(0,0,n);
-            }
-            Score++;
-            Scoretext.text = "SCORE : " + Score;
-            if (Puz_num==0)
-            {
-                Puz_num++;
-                for(int i=0; i<9; i++)
-                {
-                    Sp_change[i].sprite = pictures_two[i];
-                }
-            }
-           else  if (Puz_num == 1)
-            {
-                Puz_num++;
-                for (int i = 0; i < 9; i++)
-                {
-                    Sp_change[i].sprite = pictures_three[i];
-                }
-            }
-            else
-            {
-                Puz_num = 0;
-                for (int i = 0; i < 9; i++)
-                {
-                    Sp_change[i].sprite = pictures_Origi[i];
-                }
-            }
-            
+            NectGame();
+
         }
        
 
@@ -93,6 +61,43 @@ public class GameControl : MonoBehaviour
         {
             Finish = true;
             panel.SetActive(true);
+        }
+    }
+
+    void NectGame()
+    {
+        Debug.Log("작동");
+        for (int j = 0; j < 9; j++)
+        {
+            int n = Random.Range(1, 4) * 90;
+            pictures[j].rotation = Quaternion.Euler(0, 0, n);
+        }
+        Score++;
+        Scoretext.text = "SCORE : " + Score;
+
+        if (Puz_num == 0)
+        {
+            Puz_num++;
+            for (int i = 0; i < 9; i++)
+            {
+                Sp_change[i].sprite = pictures_two[i];
+            }
+        }
+        else if (Puz_num == 1)
+        {
+            Puz_num++;
+            for (int i = 0; i < 9; i++)
+            {
+                Sp_change[i].sprite = pictures_three[i];
+            }
+        }
+        else
+        {
+            Puz_num = 0;
+            for (int i = 0; i < 9; i++)
+            {
+                Sp_change[i].sprite = pictures_Origi[i];
+            }
         }
     }
 }
