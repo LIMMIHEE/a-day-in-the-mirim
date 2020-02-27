@@ -66,6 +66,7 @@
     <Compile Include="Assets\GameManager.cs" />
     <Compile Include="Assets\Scripts\Book.cs" />
     <Compile Include="Assets\Scripts\Bookstate.cs" />
+    <Compile Include="Assets\Scripts\Dalog.cs" />
     <Compile Include="Assets\Scripts\DrogNshoot.cs" />
     <Compile Include="Assets\Scripts\GameControl.cs" />
     <Compile Include="Assets\Scripts\GameDialog.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="Assets\Scripts\PlayerMove.cs" />
     <Compile Include="Assets\Scripts\Roulette.cs" />
     <Compile Include="Assets\Scripts\roulette_chk.cs" />
+    <Compile Include="Assets\Scripts\ScenesCh_Ex.cs" />
     <Compile Include="Assets\Scripts\ScenseController.cs" />
     <Compile Include="Assets\Scripts\SoundManagerScript.cs" />
     <Compile Include="Assets\Scripts\swipscript_.cs" />
@@ -116,6 +118,7 @@
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\Ko_2350.txt" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald-Bold - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />

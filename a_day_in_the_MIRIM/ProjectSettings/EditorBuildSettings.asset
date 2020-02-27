@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/trashGame.unity
     guid: 85bea48707350824e97cb2ed3fba7e77
+  - enabled: 1
+    path: Assets/Scenes/Main.unity
+    guid: a5ff3f67d4df44640acb1550cd7125ac
+  - enabled: 1
+    path: Assets/Scenes/StartScenes.unity
+    guid: f4b8ae16fd621be4a83d36efb2e63353
   m_configObjects: {}
