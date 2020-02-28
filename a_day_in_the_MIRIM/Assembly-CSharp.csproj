@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\GameControl.cs" />
     <Compile Include="Assets\Scripts\GameDialog.cs" />
     <Compile Include="Assets\Scripts\MainCard.cs" />
+    <Compile Include="Assets\Scripts\N_score.cs" />
     <Compile Include="Assets\Scripts\PlayerMove.cs" />
     <Compile Include="Assets\Scripts\Roulette.cs" />
     <Compile Include="Assets\Scripts\roulette_chk.cs" />

@@ -7,16 +7,23 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
 
+    public int EndingScore;
+    public int CardGameScore;
+
     public GameObject[] Objectrand = new GameObject[5];
     private static GameManager _instence;
     public float LimiTime;
     public Text Timetext;
     public GameObject panel;
-    private bool objControl=true;
+    private bool objControl = true;
 
     public AudioClip Music;
     public AudioSource MusicSource;
 
+    public void CardGameScore_UP()
+    {
+        CardGameScore++;
+    }
     public static GameManager instence
     {
         get

@@ -32,4 +32,9 @@ public class MainCard : MonoBehaviour
     {
         Card_Back.SetActive(true);
     }
+    
+    public void allBack()
+    {
+
+    }
 }

@@ -10,11 +10,20 @@ public class ScenseController : MonoBehaviour
     public const float offsetX = 4f;
     public const float offsetY = 4.5f;
 
+    private bool isbool = false;
+
     [SerializeField] private MainCard originCard;
     [SerializeField] private Sprite[] image;
 
+    
+
     private void Start()
     {
+        if (isbool)
+        {
+            Destroy(ScoreObj);
+            Destroy(ScoreObj);
+        }
         Vector3 startPos = originCard.transform.position;   //The position of the frist card. All other cards are offset from here.
 
         int[] numbers = { 0, 0, 1, 1, 2, 2, 3, 3 };
@@ -66,6 +75,11 @@ public class ScenseController : MonoBehaviour
     private int _score = 0;
     [SerializeField] private TextMesh socreLable;
 
+    public GameObject ScoreObj;
+    private void Awake()
+    {
+        DontDestroyOnLoad(ScoreObj);
+    }
     public bool canReveal
     {
         get { return _secondRevealed == null; }
@@ -89,7 +103,8 @@ public class ScenseController : MonoBehaviour
         if (_firstRevealed.id == _secondRevealed.id)
         {
             _score++;
-            socreLable.text = "Score : " + _score;
+            ScoreObj.GetComponent<N_score>().Score_up();
+            socreLable.text = "Score : " + ScoreObj.GetComponent<N_score>().CardGame;
         }
         else
         {
@@ -111,6 +126,7 @@ public class ScenseController : MonoBehaviour
     public void Restart()
     {
         Debug.Log("다시시작2");
+        isbool = true;
         SceneManager.LoadScene("CardGame");
     }
 }
