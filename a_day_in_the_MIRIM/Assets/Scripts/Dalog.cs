@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class Dalog : MonoBehaviour
@@ -70,6 +71,7 @@ public class Dalog : MonoBehaviour
         else
         {
             textDisplay.text = "";
+            SceneManager.LoadScene("RouletteScene");
         }
    
     }
