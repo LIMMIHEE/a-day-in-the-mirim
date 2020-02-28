@@ -124,11 +124,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4129755560375353030, guid: 0e9b8f725afec254b8389a761cbec03f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4129755560375353048, guid: 0e9b8f725afec254b8389a761cbec03f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -955,10 +950,8 @@ MonoBehaviour:
     \uC544\uCE68\uC744 \uC2DC\uC791\uD574\uC57C\uACA0\uC8E0."
   - "\uADF8\uB7EC\uBA74 \uC624\uB298\uB3C4 \uD3C9\uC18C\uC640 \uAC19\uC740 \uD558\uB8E8\uB97C
     \uC9C0\uB0B4\uB3C4\uB85D       \uD560\uAE4C\uC694?"
-  - " \uC74C. \uC5B4\uCA50\uC9C0 \uD3C9\uC18C\uC640\uB294 \uB2E4\uB978 \uB290\uB08C\uC778\uB370."
-  - "\uC7A0\uAE50, \uC774 \uBAB8\uC758 \uAC1C\uC6B4\uD568\uACFC \uD587\uBE5B\uC740\u2026"
-  - "\uC5B4\uCA50\uC9C0 \uBD88\uC548\uD574! \uC11C\uB458\uB7EC\uC57C\uACA0\uB2E4! "
-  - "\uAC00\uC790!"
+  - " \uC5B4\uCA50\uC9C0 \uB204\uAC00"
+  - "\uC5B4\uCA50\uC9C0 \uB204\uAC00 \uC9C0\uCF1C\uBCF4\uB294 \uAC83 \uAC19\uB2E4."
   typingSpeed: 0
 --- !u!4 &866636969
 Transform:
@@ -1550,8 +1543,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 60.52
-  m_fontSizeBase: 60.52
+  m_fontSize: 64
+  m_fontSizeBase: 64
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

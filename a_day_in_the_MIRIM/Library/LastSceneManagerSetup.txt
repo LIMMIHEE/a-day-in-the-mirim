@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/StartScenes.unity
+- path: Assets/Scenes/AfterSchoolA_Scene.unity
   isLoaded: 1
   isActive: 1
