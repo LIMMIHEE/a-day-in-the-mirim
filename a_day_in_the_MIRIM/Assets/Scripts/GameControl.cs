@@ -71,6 +71,10 @@ public class GameControl : MonoBehaviour
         {
             int n = Random.Range(1, 4) * 90;
             pictures[j].rotation = Quaternion.Euler(0, 0, n);
+            if(pictures[j].rotation.z == 1 || pictures[j].rotation.z == -1)
+            {
+                j--;
+            }
         }
         Score++;
         Scoretext.text = "SCORE : " + Score;
