@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/CardGame.unity
+=======
+- path: Assets/Scenes/ImageGame.unity
+>>>>>>> fe61572cdd890fe0606bd5dc4ec8f5cb09af783c
   isLoaded: 1
   isActive: 1
