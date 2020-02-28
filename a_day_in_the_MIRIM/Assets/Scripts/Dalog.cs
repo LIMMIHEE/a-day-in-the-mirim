@@ -6,14 +6,47 @@ using TMPro;
 public class Dalog : MonoBehaviour
 {
     public TextMeshProUGUI textDisplay;
+
+    public TextMeshProUGUI Dialog;
+    public GameObject SayDialog;
+    public GameObject SayButton;
+    public GameObject FadeWin;
+    public GameObject Img;
+    public string[] Mainsentences;
     public string[] sentences;
+    private int Mindex;
     private int index;
     public float typingSpeed;
 
+    private float fDestroyTime = 2f; private float fTickTime;
 
-    private void Start()
+
+    private void StartD()
     {
-        StartCoroutine(Type());
+        SayDialog.SetActive(false);
+        SayButton.SetActive(false);
+    }
+
+    private void Update()
+    {
+        fTickTime += Time.deltaTime;
+        if ((fTickTime > fDestroyTime) && (fTickTime < fDestroyTime+0.02))
+        {
+            StartCoroutine(Type());
+            SayDialog.SetActive(true);
+            SayButton.SetActive(true);
+            
+        }
+
+
+            if (index == 4)
+        {
+            textDisplay = Dialog;
+            SayDialog.SetActive(false);
+            SayButton.SetActive(false);
+            FadeWin.SetActive(false);
+            Img.SetActive(false);
+        }
     }
 
     IEnumerator Type()
