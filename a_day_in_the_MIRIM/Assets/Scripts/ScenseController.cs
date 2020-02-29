@@ -62,10 +62,18 @@ public class ScenseController : MonoBehaviour
         {
             panel.SetActive(true);
             Destroy(gameObject);
-            
-            
+
+            GameObject ScoreOb = GameObject.Find("SoundObject");
+            ScoreOb.GetComponent<N_score>().Score_up(10 * ScoreOb.GetComponent<N_score>().CardGame);
+            ScoreOb.GetComponent<N_score>().CardGame = 2;
         }
      }
+
+    public void NextScence()
+    {
+        SceneManager.LoadScene("AfterSchoolB_Scene");
+    }
+
     private int[] ShuffleArray(int[] numbers)
     {
         int[] newArray = numbers.Clone() as int[];
@@ -129,9 +137,6 @@ public class ScenseController : MonoBehaviour
 
         if (_score == 4)
         {
-            GameObject ScoreOb = GameObject.Find("SoundObject");
-            ScoreOb.GetComponent<N_score>().Score_up(10* ScoreOb.GetComponent<N_score>().CardGame);
-            ScoreOb.GetComponent<N_score>().CardGame=2;
             Invoke("Restart", 2);
         }
     }
@@ -140,6 +145,6 @@ public class ScenseController : MonoBehaviour
     {
         Debug.Log("다시시작2");
         isbool = true;
-        SceneManager.LoadScene("CardGame");
+        SceneManager.LoadScene("CardGame");     // 씬 전환으로 해서 시간데이터를 전달하면 될거같은데 데이터 전달할줄 몰라요...^^
     }
 }

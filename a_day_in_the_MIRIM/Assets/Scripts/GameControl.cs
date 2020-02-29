@@ -125,7 +125,7 @@ public class GameControl : MonoBehaviour
         {
             ScoreOb.GetComponent<N_score>().Score_up(10);
         }
-        SceneManager.LoadScene("AfterSchoolA_Scene");
+        SceneManager.LoadScene("AfterSchoolB_Scene");
 
     }
 }
