@@ -31,6 +31,20 @@ public class trashGame_Delete : MonoBehaviour
         else
         {
             panel.SetActive(true);
+
+            GameObject ScoreOb = GameObject.Find("SoundObject");
+            if (score >= 10)
+            {
+                ScoreOb.GetComponent<N_score>().Score_up(100);
+            }
+            else if (score >= 6)
+            {
+                ScoreOb.GetComponent<N_score>().Score_up(50);
+            }
+            else if (score >= 3)
+            {
+                ScoreOb.GetComponent<N_score>().Score_up(10);
+            }
             Destroy(gameObject);
 
         }

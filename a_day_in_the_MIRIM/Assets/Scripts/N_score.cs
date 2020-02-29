@@ -5,6 +5,15 @@ using UnityEngine;
 public class N_score : MonoBehaviour
 {
     public int CardGame;
+    public int Endingscore;
+
+    /*
+    public bool isCardGame;
+    public bool isImgGame;
+    public bool isBookGame;
+    public bool istrashGame;
+    public bool isrollGame;
+    */
     // Start is called before the first frame update
     void Start()
     {
@@ -16,8 +25,32 @@ public class N_score : MonoBehaviour
     {
         
     }
-    public void Score_up()
+    public void Score_up(int i)
     {
-        CardGame++;
+        Endingscore += i;
     }
 }
+
+/*
+ if (isCardGame)
+        {
+
+        }
+        if (isImgGame)
+        {
+
+        }
+        if (isBookGame)
+        {
+
+        }
+        if (istrashGame)
+        {
+
+        }
+        if (isrollGame)
+        {
+
+        }
+     
+     */

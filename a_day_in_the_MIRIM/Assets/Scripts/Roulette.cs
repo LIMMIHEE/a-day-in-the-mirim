@@ -24,6 +24,9 @@ public class Roulette : MonoBehaviour
 
     public AudioSource MusicSource;
     public AudioClip Music;
+
+
+    int EndingScore;
     //float roultteSpeed = 0;
 
     // Start is called before the first frame update
@@ -101,7 +104,7 @@ public class Roulette : MonoBehaviour
         {
             if (finalAngle == i * totalAngle)
             {
-                
+                EndingScore = int.Parse(PrizeName[i]);
                 switch (int.Parse(PrizeName[i]))
                 {
                     case 1: Ptext.text = "야호! 빠르게 도착했다."; break;
@@ -125,7 +128,19 @@ public class Roulette : MonoBehaviour
     }
     public void NextScence()
     {
-        SceneManager.LoadScene("CleaningScene");
+        
+        if (EndingScore == 1)
+        {
+            soundObj.GetComponent<N_score>().Score_up(100);
+        }else if (EndingScore == 2)
+        {
+            soundObj.GetComponent<N_score>().Score_up(50);
+        }
+        else if (EndingScore == 3)
+        {
+            soundObj.GetComponent<N_score>().Score_up(30);
+        }
+        SceneManager.LoadScene("ClassScenes");
     }
     
 }

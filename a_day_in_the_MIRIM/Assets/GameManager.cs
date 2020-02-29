@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
     {
         if(LimiTime > 0) {
             LimiTime -= Time.deltaTime;
-            Timetext.text = "Time : " + (int)LimiTime;
+            Timetext.text = "TIME : " + (int)LimiTime;
             panel.SetActive(false);
         }
         else
@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
     {
         MusicSource.PlayOneShot(Music);
         score++;
-        ScoreText.text = "Score : " + score;
+        ScoreText.text = "SCORE : " + score;
     }
     private void CreateBook()
     {
@@ -95,7 +95,21 @@ public class GameManager : MonoBehaviour
     }
     public void NextScence()
     {
-        SceneManager.LoadScene("TestScene");
+        GameObject ScoreOb = GameObject.Find("SoundObject");
+        if (score >= 50)
+        {
+            ScoreOb.GetComponent<N_score>().Score_up(50);
+        }else if(score >= 35)
+        {
+            ScoreOb.GetComponent<N_score>().Score_up(30);
+        }else if (score >= 25)
+        {
+            ScoreOb.GetComponent<N_score>().Score_up(20);
+        }else if (score >= 10)
+        {
+            ScoreOb.GetComponent<N_score>().Score_up(10);
+        }
+            SceneManager.LoadScene("CleaningScene");
     }
 
 

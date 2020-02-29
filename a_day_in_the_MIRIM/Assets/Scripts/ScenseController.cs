@@ -103,7 +103,7 @@ public class ScenseController : MonoBehaviour
         if (_firstRevealed.id == _secondRevealed.id)
         {
             _score++;
-            ScoreObj.GetComponent<N_score>().Score_up();
+            
             socreLable.text = "Score : " + ScoreObj.GetComponent<N_score>().CardGame;
         }
         else
