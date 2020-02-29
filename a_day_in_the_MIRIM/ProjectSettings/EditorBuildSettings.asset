@@ -26,4 +26,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StartScenes.unity
     guid: f4b8ae16fd621be4a83d36efb2e63353
+  - enabled: 1
+    path: Assets/Scenes/CardGame.unity
+    guid: 4f817d7173eed524a9eeb86bb06238d4
+  - enabled: 1
+    path: Assets/Scenes/ClassScenes.unity
+    guid: 8c07162c59c208f47b544410bbc9ebcf
+  - enabled: 1
+    path: Assets/Scenes/ImageGame.unity
+    guid: e80dce2fd2c096b4cba9f4a61d8a6abf
   m_configObjects: {}

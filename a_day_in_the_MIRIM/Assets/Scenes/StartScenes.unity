@@ -939,6 +939,7 @@ MonoBehaviour:
   SayButton: {fileID: 2090083529}
   FadeWin: {fileID: 1664684637}
   Img: {fileID: 1390958241}
+  charSay_b: {fileID: 490008400}
   Mainsentences: []
   sentences:
   - "\uC624\uB298\uB3C4 \uC88B\uC740 \uC544\uCE68\uC774\uB124\uC694."
@@ -950,8 +951,9 @@ MonoBehaviour:
     \uC544\uCE68\uC744 \uC2DC\uC791\uD574\uC57C\uACA0\uC8E0."
   - "\uADF8\uB7EC\uBA74 \uC624\uB298\uB3C4 \uD3C9\uC18C\uC640 \uAC19\uC740 \uD558\uB8E8\uB97C
     \uC9C0\uB0B4\uB3C4\uB85D       \uD560\uAE4C\uC694?"
-  - " \uC5B4\uCA50\uC9C0 \uB204\uAC00"
-  - "\uC5B4\uCA50\uC9C0 \uB204\uAC00 \uC9C0\uCF1C\uBCF4\uB294 \uAC83 \uAC19\uB2E4."
+  - " \uC74C. \uC5B4\uCA50\uC9C0 \uD3C9\uC18C\uC640\uB294 \uB2E4\uB978 \uB290\uB08C\uC778\uB370. "
+  - "\uC7A0\uAE50, \uC774 \uBAB8\uC758 \uAC1C\uC6B4\uD568\uACFC \uD587\uBE5B\uC740\u2026"
+  - "\uC5B4\uCA50\uC9C0 \uBD88\uC548\uD574! \uC11C\uB458\uB7EC\uC57C\uACA0\uB2E4!"
   typingSpeed: 0
 --- !u!4 &866636969
 Transform:
@@ -1543,8 +1545,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 64
-  m_fontSizeBase: 64
+  m_fontSize: 55
+  m_fontSizeBase: 55
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1553,7 +1555,7 @@ MonoBehaviour:
   m_textAlignment: 257
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: 29.42
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0

@@ -13,6 +13,7 @@ public class Dalog : MonoBehaviour
     public GameObject SayButton;
     public GameObject FadeWin;
     public GameObject Img;
+    public GameObject charSay_b;
     public string[] Mainsentences;
     public string[] sentences;
     private int Mindex;
@@ -30,6 +31,10 @@ public class Dalog : MonoBehaviour
 
     private void Update()
     {
+        if(textDisplay.text== sentences[index])
+        {
+            SayButton.SetActive(true);
+        }
         fTickTime += Time.deltaTime;
         if ((fTickTime > fDestroyTime) && (fTickTime < fDestroyTime+0.02))
         {
@@ -43,8 +48,9 @@ public class Dalog : MonoBehaviour
             if (index == 4)
         {
             textDisplay = Dialog;
+            SayButton = charSay_b;
             SayDialog.SetActive(false);
-            SayButton.SetActive(false);
+            
             FadeWin.SetActive(false);
             Img.SetActive(false);
         }
@@ -62,7 +68,8 @@ public class Dalog : MonoBehaviour
 
     public void Nextsentences()
     {
-        if(index < sentences.Length - 1)
+        SayButton.SetActive(false);
+        if (index < sentences.Length - 1)
         {
             index++;
             textDisplay.text = "";

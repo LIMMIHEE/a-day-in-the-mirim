@@ -161,5 +161,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca89873c5fdd33948ae3b37426429a00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialog: {fileID: 0}
   maxSpeed: 5
   JumpPower: 10

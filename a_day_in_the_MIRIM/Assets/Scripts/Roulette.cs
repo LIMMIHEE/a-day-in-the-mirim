@@ -121,7 +121,7 @@ public class Roulette : MonoBehaviour
 
     public void NextScence()
     {
-        SceneManager.LoadScene("TestScene");
+        SceneManager.LoadScene("ClassScenes");
     }
     
 }
