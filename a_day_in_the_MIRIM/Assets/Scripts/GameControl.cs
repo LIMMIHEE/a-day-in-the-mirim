@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameControl : MonoBehaviour
 {
@@ -60,7 +61,7 @@ public class GameControl : MonoBehaviour
         else
         {
             Finish = true;
-            panel.SetActive(true);
+            EndGame();
         }
     }
 
@@ -103,5 +104,28 @@ public class GameControl : MonoBehaviour
                 Sp_change[i].sprite = pictures_Origi[i];
             }
         }
+    }
+    private void EndGame()
+    {
+       
+        panel.SetActive(true);
+    }
+    public void N_sen()
+    {
+        GameObject ScoreOb = GameObject.Find("SoundObject");
+        if (Score >= 3)
+        {
+            ScoreOb.GetComponent<N_score>().Score_up(50);
+        }
+        else if (Score >= 2)
+        {
+            ScoreOb.GetComponent<N_score>().Score_up(30);
+        }
+        else if (Score >= 1)
+        {
+            ScoreOb.GetComponent<N_score>().Score_up(10);
+        }
+        SceneManager.LoadScene("AfterSchoolA_Scene");
+
     }
 }

@@ -40,7 +40,7 @@ public class trajectoryLine : MonoBehaviour
 
     public void NextScence()
     {
-        SceneManager.LoadScene("AfterSchoolA_Scene");
+        SceneManager.LoadScene("AfterSchoolB_Scene");
     }
 
 

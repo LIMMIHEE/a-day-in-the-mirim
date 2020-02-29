@@ -14,16 +14,13 @@ public class ScenseController : MonoBehaviour
 
     [SerializeField] private MainCard originCard;
     [SerializeField] private Sprite[] image;
+    public float LimiTime;
 
-    
-
+    [SerializeField] public TextMesh socreLable;
+    public GameObject panel;
     private void Start()
     {
-        if (isbool)
-        {
-            Destroy(ScoreObj);
-            Destroy(ScoreObj);
-        }
+        
         Vector3 startPos = originCard.transform.position;   //The position of the frist card. All other cards are offset from here.
 
         int[] numbers = { 0, 0, 1, 1, 2, 2, 3, 3 };
@@ -53,7 +50,22 @@ public class ScenseController : MonoBehaviour
             }
         }
     }
-
+    private void Update()
+    {
+        if (LimiTime > 0)
+        {
+            LimiTime -= Time.deltaTime;
+            socreLable.text = "T I M E : " + (int)LimiTime;
+            panel.SetActive(false);
+        }
+        else
+        {
+            panel.SetActive(true);
+            Destroy(gameObject);
+            
+            
+        }
+     }
     private int[] ShuffleArray(int[] numbers)
     {
         int[] newArray = numbers.Clone() as int[];
@@ -73,13 +85,10 @@ public class ScenseController : MonoBehaviour
     private MainCard _secondRevealed;
 
     private int _score = 0;
-    [SerializeField] private TextMesh socreLable;
+   
 
-    public GameObject ScoreObj;
-    private void Awake()
-    {
-        DontDestroyOnLoad(ScoreObj);
-    }
+    
+
     public bool canReveal
     {
         get { return _secondRevealed == null; }
@@ -100,11 +109,12 @@ public class ScenseController : MonoBehaviour
 
     private IEnumerator CheckMatch()
     {
+           
         if (_firstRevealed.id == _secondRevealed.id)
         {
             _score++;
             
-            socreLable.text = "Score : " + ScoreObj.GetComponent<N_score>().CardGame;
+            
         }
         else
         {
@@ -119,6 +129,9 @@ public class ScenseController : MonoBehaviour
 
         if (_score == 4)
         {
+            GameObject ScoreOb = GameObject.Find("SoundObject");
+            ScoreOb.GetComponent<N_score>().Score_up(10* ScoreOb.GetComponent<N_score>().CardGame);
+            ScoreOb.GetComponent<N_score>().CardGame=2;
             Invoke("Restart", 2);
         }
     }
