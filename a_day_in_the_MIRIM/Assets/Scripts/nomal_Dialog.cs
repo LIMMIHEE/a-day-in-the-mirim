@@ -12,13 +12,16 @@ public class nomal_Dialog : MonoBehaviour
     public string[] sentence;
     private int index;
     public float typingSpeed;
+    public string n_scence;
     
     public GameObject continueButton;
 
     public GameObject Techer_sp;
     public GameObject char_;
+    
 
     public int change_time;
+    public int change_time_two;
     void Start()
     {
         StartCoroutine(Type());
@@ -37,7 +40,12 @@ public class nomal_Dialog : MonoBehaviour
             char_.SetActive(true);
             Techer_sp.SetActive(false);
         }
-    }
+        if (index == change_time_two)
+        {
+            char_.SetActive(false);
+            Techer_sp.SetActive(true);
+        }
+        }
     IEnumerator Type()
     {
         foreach(char letter in sentence[index].ToCharArray())
@@ -57,7 +65,7 @@ public class nomal_Dialog : MonoBehaviour
         else
         {
             textDisplay.text = "";
-            SceneManager.LoadScene("BookGame");
+            SceneManager.LoadScene(n_scence);
         }
     }
 

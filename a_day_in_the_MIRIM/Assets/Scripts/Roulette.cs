@@ -118,10 +118,14 @@ public class Roulette : MonoBehaviour
           
         
     }
-
+    public GameObject soundObj;
+    private void Awake()
+    {
+        DontDestroyOnLoad(soundObj);
+    }
     public void NextScence()
     {
-        SceneManager.LoadScene("ClassScenes");
+        SceneManager.LoadScene("CleaningScene");
     }
     
 }
