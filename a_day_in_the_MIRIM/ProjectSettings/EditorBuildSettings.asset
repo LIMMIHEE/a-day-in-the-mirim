@@ -33,6 +33,9 @@ EditorBuildSettings:
     path: Assets/Scenes/true_CardGame.unity
     guid: 2d1a1cd069906d84db2c76246e681b60
   - enabled: 1
+    path: Assets/Scenes/EndingImg_restart.unity
+    guid: f64e44ae21bfbcc4791225b0a8c1037a
+  - enabled: 1
     path: Assets/Scenes/CleaningScene.unity
     guid: 04344a4933457084fa2a77bda34e7578
   - enabled: 1
@@ -41,6 +44,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AfterSchoolA_Scene.unity
     guid: bb0df78e8b266f545b6bce2e190810bf
+  - enabled: 1
+    path: Assets/Scenes/sideSayScence.unity
+    guid: 0cf5ec8f50404924aa7c6ec741db35ad
   - enabled: 1
     path: Assets/Scenes/ClassScenes.unity
     guid: 8c07162c59c208f47b544410bbc9ebcf

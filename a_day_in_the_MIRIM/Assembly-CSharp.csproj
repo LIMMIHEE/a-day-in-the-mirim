@@ -79,6 +79,7 @@
     <Compile Include="Assets\Scripts\roulette_chk.cs" />
     <Compile Include="Assets\Scripts\ScenesCh_Ex.cs" />
     <Compile Include="Assets\Scripts\ScenseController.cs" />
+    <Compile Include="Assets\Scripts\sideFadeinout.cs" />
     <Compile Include="Assets\Scripts\SoundManagerScript.cs" />
     <Compile Include="Assets\Scripts\swipscript_.cs" />
     <Compile Include="Assets\Scripts\TouchRotate.cs" />

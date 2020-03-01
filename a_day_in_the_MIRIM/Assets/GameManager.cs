@@ -129,7 +129,7 @@ public class GameManager : MonoBehaviour
         {
             ScoreOb.GetComponent<N_score>().Score_up(10);
         }
-            SceneManager.LoadScene("CleaningScene");
+           
     }
 
 

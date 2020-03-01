@@ -9,6 +9,7 @@ public class Fadeinout : MonoBehaviour
     public Image BlackFade;
     public GameObject GO;
 
+    
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,7 @@ public class Fadeinout : MonoBehaviour
         GO.SetActive(false);
         FadeIn();
         
+
     }
     // Update is called once per frame
     public void FadeIn()
@@ -27,8 +29,12 @@ public class Fadeinout : MonoBehaviour
     public void FadeIn_()
     {
         GO.SetActive(true);
-        BlackFade.canvasRenderer.SetAlpha(0.0f);
         BlackFade.CrossFadeAlpha(1, 2, false);
 
     }
+
+
+
+   
+    
 }

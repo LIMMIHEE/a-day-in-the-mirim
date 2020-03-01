@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SoundManagerScript : MonoBehaviour
 {
@@ -29,5 +30,16 @@ public class SoundManagerScript : MonoBehaviour
     public void PlayMusic()
     {
         MusicSource.PlayOneShot(MusicClip);
+    }
+    public void PlayMusicAndSay()
+    {
+        MusicSource.PlayOneShot(MusicClip);
+        
+        Invoke("GoNScence", 8);
+        
+    }
+    void GoNScence()
+    {
+        SceneManager.LoadScene("sideSayScence");
     }
 }
