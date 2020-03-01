@@ -52,10 +52,11 @@ public class ScenseController : MonoBehaviour
     }
     private void Update()
     {
-        if (LimiTime > 0)
+        GameObject ScoreOb = GameObject.Find("SoundObject");
+        if (ScoreOb.GetComponent<N_score>().CaedTime > 0)
         {
-            LimiTime -= Time.deltaTime;
-            socreLable.text = "T I M E : " + (int)LimiTime;
+            ScoreOb.GetComponent<N_score>().CaedTime -= Time.deltaTime;
+            socreLable.text = "T I M E : " + (int)ScoreOb.GetComponent<N_score>().CaedTime;
             panel.SetActive(false);
         }
         else
@@ -63,7 +64,7 @@ public class ScenseController : MonoBehaviour
             panel.SetActive(true);
             Destroy(gameObject);
 
-            GameObject ScoreOb = GameObject.Find("SoundObject");
+            
             ScoreOb.GetComponent<N_score>().Score_up(10 * ScoreOb.GetComponent<N_score>().CardGame);
             ScoreOb.GetComponent<N_score>().CardGame = 2;
         }

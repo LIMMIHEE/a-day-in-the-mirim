@@ -982,7 +982,7 @@ MonoBehaviour:
   - "\uADF8\uB798\uB3C4 \uC5B4\uB290\uC815\uB3C4 \uB4E4\uC5C8\uC73C\uB2C8\uAE4C."
   - "\uD480 \uC218 \uC788\uACA0\uC9C0? \uC788\uC744 \uAC70\uC57C!"
   typingSpeed: 0
-  n_scence: CardGame
+  n_scence: ImageGame
   continueButton: {fileID: 348436856}
   Techer_sp: {fileID: 1085907669}
   char_: {fileID: 877960484}

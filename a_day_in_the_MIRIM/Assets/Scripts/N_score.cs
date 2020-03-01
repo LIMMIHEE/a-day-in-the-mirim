@@ -6,6 +6,7 @@ public class N_score : MonoBehaviour
 {
     public int CardGame;
     public int Endingscore;
+    public float CaedTime = 30;
 
     /*
     public bool isCardGame;
