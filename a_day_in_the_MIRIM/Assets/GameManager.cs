@@ -15,11 +15,20 @@ public class GameManager : MonoBehaviour
     public float LimiTime;
     public Text Timetext;
     public GameObject panel;
+    public GameObject GS_panel;
     private bool objControl = true;
 
     public AudioClip Music;
     public AudioSource MusicSource;
 
+    private bool isGameStart=false;
+    private bool isGameinside = false;
+
+    public void Gamestart()
+    {
+        isGameStart = true;
+        GS_panel.SetActive(false);
+    }
     public void CardGameScore_UP()
     {
         CardGameScore++;
@@ -43,24 +52,35 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         
-        CreateBook();
-        StartCoroutine(CrateBookRotation());
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(LimiTime > 0) {
-            LimiTime -= Time.deltaTime;
-            Timetext.text = "TIME : " + (int)LimiTime;
-            panel.SetActive(false);
-        }
-        else
+        if (isGameStart)
         {
-            StopCoroutine(CrateBookRotation());
-            panel.SetActive(true);
-            objControl = false;
+            CreateBook();
+            StartCoroutine(CrateBookRotation());
+            isGameinside = true;
+            isGameStart = false;
+
         }
+        if (isGameinside)
+        {
+            if (LimiTime > 0)
+            {
+                LimiTime -= Time.deltaTime;
+                Timetext.text = "TIME : " + (int)LimiTime;
+                panel.SetActive(false);
+            }
+            else
+            {
+                StopCoroutine(CrateBookRotation());
+                panel.SetActive(true);
+                objControl = false;
+            }
+        }
+        
     }
 
     IEnumerator CrateBookRotation()

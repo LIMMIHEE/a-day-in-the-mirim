@@ -26,6 +26,10 @@ public class GameControl : MonoBehaviour
     [SerializeField]
     public GameObject panel;
 
+
+    public GameObject GS_panel;
+    public bool isGameStart = false;
+
     public static bool Finish;
     int Score;
 
@@ -34,34 +38,40 @@ public class GameControl : MonoBehaviour
         panel.SetActive(false);
         Finish = false;
     }
-
+    public void Gamestart()
+    {
+        isGameStart = true;
+        GS_panel.SetActive(false);
+    }
     private void Update()
     {
-        if (pictures[0].rotation.z  == 0 &&
-           pictures[1].rotation.z == 0 &&
-           pictures[2].rotation.z == 0 &&
-           pictures[3].rotation.z == 0 &&
-           pictures[4].rotation.z == 0 &&
-           pictures[5].rotation.z == 0 &&
-           pictures[6].rotation.z == 0 &&
-           pictures[7].rotation.z == 0 &&
-           pictures[8].rotation.z == 0)
-        {
-            NectGame();
+        if (isGameStart) { 
+            if (pictures[0].rotation.z  == 0 &&
+               pictures[1].rotation.z == 0 &&
+               pictures[2].rotation.z == 0 &&
+               pictures[3].rotation.z == 0 &&
+               pictures[4].rotation.z == 0 &&
+               pictures[5].rotation.z == 0 &&
+               pictures[6].rotation.z == 0 &&
+               pictures[7].rotation.z == 0 &&
+               pictures[8].rotation.z == 0)
+            {
+                NectGame();
 
-        }
+            }
        
 
-        if (LimiTime > 0)
-        {
-            LimiTime -= Time.deltaTime;
-            Timetext.text = "Time : " + (int)LimiTime;
-            panel.SetActive(false);
-        }
-        else
-        {
-            Finish = true;
-            EndGame();
+            if (LimiTime > 0)
+            {
+                LimiTime -= Time.deltaTime;
+                Timetext.text = "Time : " + (int)LimiTime;
+                panel.SetActive(false);
+            }
+            else
+            {
+                Finish = true;
+                EndGame();
+            }
         }
     }
 

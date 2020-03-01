@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Main.unity
+    guid: a5ff3f67d4df44640acb1550cd7125ac
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 4e0878ef0c9392c43a374c79316ec1e1
   - enabled: 1
@@ -21,14 +24,14 @@ EditorBuildSettings:
     path: Assets/Scenes/trashGame.unity
     guid: 85bea48707350824e97cb2ed3fba7e77
   - enabled: 1
-    path: Assets/Scenes/Main.unity
-    guid: a5ff3f67d4df44640acb1550cd7125ac
-  - enabled: 1
     path: Assets/Scenes/StartScenes.unity
     guid: f4b8ae16fd621be4a83d36efb2e63353
   - enabled: 1
     path: Assets/Scenes/CardGame.unity
     guid: 4f817d7173eed524a9eeb86bb06238d4
+  - enabled: 1
+    path: Assets/Scenes/true_CardGame.unity
+    guid: 2d1a1cd069906d84db2c76246e681b60
   - enabled: 1
     path: Assets/Scenes/CleaningScene.unity
     guid: 04344a4933457084fa2a77bda34e7578

@@ -18,56 +18,77 @@ public class ScenseController : MonoBehaviour
 
     [SerializeField] public TextMesh socreLable;
     public GameObject panel;
+    public GameObject GS_panel;
+    public bool isGameStart = false;
+    bool isinsideGame = false;
+
+
+    public void Gamestart()
+    {
+        isGameStart = true;
+        GS_panel.SetActive(false);
+        SceneManager.LoadScene("true_CardGame");
+    }
     private void Start()
     {
         
-        Vector3 startPos = originCard.transform.position;   //The position of the frist card. All other cards are offset from here.
-
-        int[] numbers = { 0, 0, 1, 1, 2, 2, 3, 3 };
-        numbers = ShuffleArray(numbers);    //This is a funtion we will create in a minute!
-
-        for(int i = 0; i < gridCols; i++)
-        {
-            for(int j = 0; j<gridRows; j++)
-            {
-                MainCard card;
-                if( i==0 && j==0)
-                {
-                    card = originCard;
-                }
-                else
-                {
-                    card = Instantiate(originCard) as MainCard;
-                }
-
-                int index = j * gridCols + i;
-                int id = numbers[index];
-                card.ChangeSprite(id, image[id]);
-
-                float posX = (offsetX * i) + startPos.x;
-                float posY = (offsetY * j) + startPos.y;
-                card.transform.position = new Vector3(posX, posY, startPos.z);
-            }
-        }
     }
     private void Update()
     {
-        GameObject ScoreOb = GameObject.Find("SoundObject");
-        if (ScoreOb.GetComponent<N_score>().CaedTime > 0)
+        if (isGameStart)
         {
-            ScoreOb.GetComponent<N_score>().CaedTime -= Time.deltaTime;
-            socreLable.text = "T I M E : " + (int)ScoreOb.GetComponent<N_score>().CaedTime;
-            panel.SetActive(false);
-        }
-        else
-        {
-            panel.SetActive(true);
-            Destroy(gameObject);
+            isGameStart = false;
+            isinsideGame = true;
 
-            
-            ScoreOb.GetComponent<N_score>().Score_up(10 * ScoreOb.GetComponent<N_score>().CardGame);
-            ScoreOb.GetComponent<N_score>().CardGame = 2;
+            Vector3 startPos = originCard.transform.position;   //The position of the frist card. All other cards are offset from here.
+
+            int[] numbers = { 0, 0, 1, 1, 2, 2, 3, 3 };
+            numbers = ShuffleArray(numbers);    //This is a funtion we will create in a minute!
+
+            for (int i = 0; i < gridCols; i++)
+            {
+                for (int j = 0; j < gridRows; j++)
+                {
+                    MainCard card;
+                    if (i == 0 && j == 0)
+                    {
+                        card = originCard;
+                    }
+                    else
+                    {
+                        card = Instantiate(originCard) as MainCard;
+                    }
+
+                    int index = j * gridCols + i;
+                    int id = numbers[index];
+                    card.ChangeSprite(id, image[id]);
+
+                    float posX = (offsetX * i) + startPos.x;
+                    float posY = (offsetY * j) + startPos.y;
+                    card.transform.position = new Vector3(posX, posY, startPos.z);
+                }
+            }
         }
+        if (isinsideGame)
+        {
+            GameObject ScoreOb = GameObject.Find("SoundObject");
+            if (ScoreOb.GetComponent<N_score>().CaedTime > 0)
+            {
+                ScoreOb.GetComponent<N_score>().CaedTime -= Time.deltaTime;
+                socreLable.text = "T I M E : " + (int)ScoreOb.GetComponent<N_score>().CaedTime;
+                panel.SetActive(false);
+            }
+            else
+            {
+                panel.SetActive(true);
+                Destroy(gameObject);
+
+
+                ScoreOb.GetComponent<N_score>().Score_up(10 * ScoreOb.GetComponent<N_score>().CardGame);
+                ScoreOb.GetComponent<N_score>().CardGame = 2;
+            }
+        }
+        
      }
 
     public void NextScence()
