@@ -81,11 +81,10 @@ public class ScenseController : MonoBehaviour
             else
             {
                 panel.SetActive(true);
-                Destroy(gameObject);
+                isinsideGame = false;
 
 
-                ScoreOb.GetComponent<N_score>().Score_up(10 * ScoreOb.GetComponent<N_score>().CardGame);
-                ScoreOb.GetComponent<N_score>().CardGame = 2;
+                
             }
         }
         
@@ -93,7 +92,7 @@ public class ScenseController : MonoBehaviour
 
     public void NextScence()
     {
-        SceneManager.LoadScene("AfterSchoolB_Scene");
+        SceneManager.LoadScene("EndingScene");
     }
 
     private int[] ShuffleArray(int[] numbers)
@@ -165,8 +164,11 @@ public class ScenseController : MonoBehaviour
 
     public void Restart()
     {
+        GameObject ScoreOb = GameObject.Find("SoundObject");
+        ScoreOb.GetComponent<N_score>().Score_up(10 * ScoreOb.GetComponent<N_score>().CardGame);
+        ScoreOb.GetComponent<N_score>().CardGame = 2;
         Debug.Log("다시시작2");
         isbool = true;
-        SceneManager.LoadScene("CardGame");     // 씬 전환으로 해서 시간데이터를 전달하면 될거같은데 데이터 전달할줄 몰라요...^^
+        SceneManager.LoadScene("true_CardGame");     
     }
 }
