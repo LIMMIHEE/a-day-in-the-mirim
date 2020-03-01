@@ -7,6 +7,9 @@ public class MainCard : MonoBehaviour
     [SerializeField] private ScenseController controller;
     [SerializeField] private GameObject Card_Back;
 
+    public AudioSource Scurce;
+    public AudioClip Clip;
+
     public void OnMouseDown()
     {
         if(Card_Back.activeSelf && controller.canReveal)
@@ -25,6 +28,7 @@ public class MainCard : MonoBehaviour
     public void ChangeSprite(int id, Sprite image)
     {
         _id = id;
+
         GetComponent<SpriteRenderer>().sprite = image; //This gets the sprite renderer component and change the property of it's sprite!
     }
     

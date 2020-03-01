@@ -14,6 +14,11 @@ public class trashGame_Delete : MonoBehaviour
     public Text Scoretext;
     public GameObject panel;
     public GameObject GS_panel;
+
+    public AudioClip Goll;
+    public AudioSource source;
+
+
     // Start is called before the first frame update
 
     public bool isGameStart = false;
@@ -69,7 +74,7 @@ public class trashGame_Delete : MonoBehaviour
         {
             score++;
         }
-        
+        source.PlayOneShot(Goll);
         Scoretext.text = "SCORE : " + (int)score;
         Debug.Log(score);
         Instantiate(trash, new Vector3(0, 0, 0), Quaternion.identity);

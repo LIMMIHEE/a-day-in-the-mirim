@@ -21,7 +21,8 @@ public class ScenseController : MonoBehaviour
     public GameObject GS_panel;
     public bool isGameStart = false;
     bool isinsideGame = false;
-
+    public AudioSource Scurce;
+    public AudioClip Clip;
 
     public void Gamestart()
     {
@@ -169,6 +170,7 @@ public class ScenseController : MonoBehaviour
         ScoreOb.GetComponent<N_score>().CardGame = 2;
         Debug.Log("다시시작2");
         isbool = true;
+        Scurce.PlayOneShot(Clip);
         SceneManager.LoadScene("true_CardGame");     
     }
 }

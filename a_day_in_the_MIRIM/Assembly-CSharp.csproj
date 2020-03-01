@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\Bookstate.cs" />
     <Compile Include="Assets\Scripts\Dalog.cs" />
     <Compile Include="Assets\Scripts\DrogNshoot.cs" />
+    <Compile Include="Assets\Scripts\EndScenes_.cs" />
     <Compile Include="Assets\Scripts\Fadeinout.cs" />
     <Compile Include="Assets\Scripts\GameControl.cs" />
     <Compile Include="Assets\Scripts\GameDialog.cs" />

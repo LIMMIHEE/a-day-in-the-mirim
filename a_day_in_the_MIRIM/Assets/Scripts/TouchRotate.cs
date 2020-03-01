@@ -5,7 +5,8 @@ using UnityEngine;
 public class TouchRotate : MonoBehaviour
 {
     public bool isRotateStart;
-
+    public AudioSource Scurce;
+    public AudioClip Clip;
     public void RotateStart()
     {
         isRotateStart = true;
@@ -17,6 +18,7 @@ public class TouchRotate : MonoBehaviour
             if (!GameControl.Finish)
             {
                 transform.Rotate(0f, 0f, 90f);
+                Scurce.PlayOneShot(Clip);
             }
         }
         
