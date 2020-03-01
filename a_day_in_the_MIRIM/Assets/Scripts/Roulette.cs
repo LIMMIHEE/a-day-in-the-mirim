@@ -18,9 +18,11 @@ public class Roulette : MonoBehaviour
     public string[] PrizeName;
 
     public GameObject panel;
+    public GameObject Gamepanel;
     private float DestotyTime=2;
     private float TickTime=0;
     private bool timechk_b=false;
+    public bool isGamestart=false;
 
     public AudioSource MusicSource;
     public AudioClip Music;
@@ -51,20 +53,22 @@ public class Roulette : MonoBehaviour
 
         this.roultteSpeed *= 0.99f;
         */
-        if(Input.GetMouseButtonDown(0)&& isCoroutine)
-        {
-            StartCoroutine(Spin());
-            MusicSource.PlayOneShot(Music);
-        }
-        if(timechk_b == true)
-        {
-            TickTime += Time.deltaTime;
-            if (TickTime> DestotyTime)
+        if (isGamestart) {
+            Gamepanel.SetActive(false);
+            if (Input.GetMouseButtonDown(0)&& isCoroutine)
             {
-                panel.SetActive(true);
+                StartCoroutine(Spin());
+                MusicSource.PlayOneShot(Music);
+            }
+            if(timechk_b == true)
+            {
+                TickTime += Time.deltaTime;
+                if (TickTime> DestotyTime)
+                {
+                    panel.SetActive(true);
+                }
             }
         }
-
     }
 
    private IEnumerator Spin()
@@ -141,6 +145,10 @@ public class Roulette : MonoBehaviour
             soundObj.GetComponent<N_score>().Score_up(30);
         }
         SceneManager.LoadScene("ClassScenes");
+    }
+    public void Gamestart()
+    {
+        isGamestart = true;
     }
     
 }
