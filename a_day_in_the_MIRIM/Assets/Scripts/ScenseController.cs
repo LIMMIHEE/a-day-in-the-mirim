@@ -159,7 +159,7 @@ public class ScenseController : MonoBehaviour
 
         if (_score == 4)
         {
-            Invoke("Restart", 2);
+            Invoke("Restart", 1);
         }
     }
 
